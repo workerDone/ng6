@@ -50,6 +50,11 @@
               "buildOptimizer": true
             },
             "dev": {
+              "namedChunks": true,
+              "optimization": false,
+              "extractCss": false,
+              "buildOptimizer": false,
+              "aot": true,
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
