@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { navigationRoutes } from './core/navigational/enum-navigation/enum-navigation';
-import { LoginGuard } from './core/auth/guards/login.guard';
+import { LoginGuard } from './core/auth/guards/login/login.guard';
 
 const routes: Routes = [
   {
