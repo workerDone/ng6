@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { navigationRoutes } from './core/navigational/enum-navigation/enum-navigation';
+import { LoginGuard } from './core/auth/guards/login.guard';
 
 const routes: Routes = [
   {
@@ -11,7 +12,8 @@ const routes: Routes = [
   },
   {
     path: navigationRoutes.login,
-    loadChildren: './pages/login/login.module#LoginModule'
+    loadChildren: './pages/login/login.module#LoginModule',
+    canActivate: [LoginGuard]
   },
 ];
 
