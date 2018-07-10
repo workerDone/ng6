@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, from, pipe, interval, fromEvent, range, timer } from 'rxjs';
+import { Observable, from, pipe, interval, fromEvent, range, timer, Subject } from 'rxjs';
 
 import { map, filter, scan, take, takeLast, takeWhile, takeUntil } from 'rxjs/operators';
 
@@ -28,7 +28,20 @@ export class SignInComponent implements OnInit {
     this.authApiService.init('posts/1')
       .subscribe(data => console.log(data))
     this.loginService.init();
-
+    const sameSubject = new Subject();
+    sameSubject.subscribe(
+    (data => console.log(data)),
+    (error => console.log(error)),
+    () => {
+      console.log('comp');
+    }
+    );
+    sameSubject.next('dsf');
+    sameSubject.next('daaa');
+    setTimeout(() => {
+      sameSubject.next('2132435465aaa');
+      sameSubject.complete();
+    }, 1000);
     // this.formArray([1, 2, 3, 4, 5, 6, 7, 8])
     // this.timer = interval(1000).pipe(takeWhile(ev => +ev < 4));
     // this.data.subscribe(data => console.log(data))
