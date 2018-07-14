@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { navigationRoutes } from './core/navigational/enum-navigation/enum-navigation';
 import { LoginGuard } from './core/auth/guards/login/login.guard';
+// import { AppNavComponent } from './app-nav/app-nav.component';
 
 const routes: Routes = [
   {
