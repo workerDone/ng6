@@ -2,7 +2,7 @@
 
 @include mat-core();
 
-$candy-app-primary: mat-palette($mat-blue-grey);
+$candy-app-primary: mat-palette($mat-blue-grey,A200);
 $candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
 
 
